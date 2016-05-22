@@ -2,7 +2,20 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: 10px;
     font-family: 'Microsoft Yahei', Tahoma, Helvetica, Arial, sans-serif;
+}
+
+@media screen and (max-width: 320px ) {
+    html {
+        font-size: 5px;
+    }
+}
+
+@media screen and (max-width: 375px ) {
+    html {
+        font-size: 4px;
+    }
 }
 
 html, body {
@@ -21,34 +34,60 @@ img {
 }
 
 #main {
-    width: 640px;
-    height: 960px;
-    overflow: hidden;
+    width: 64rem;
+    height: 96rem;
     position: absolute;
     left: 50%;
-    margin-left: -320px;
+    margin-left: -32rem;
     top: 0;
     -webkit-transform-origin: top;
     transform-origin: top;
 }
-audio {
-    display: none;
-}
 
 .music {
-    display: none;
     position: absolute;
     top: 5%;
-    right: 10%;
-    width: 36px;
-    height: 36px;
+    right: 15%;
+    width: 5rem;
+    height: 5rem;
     background: url("../images/music.svg") no-repeat;
     background-size: 100% 100%;
     z-index: 10000;
 }
+
+.move {
+    -webkit-animation: musicMove 1s linear infinite;
+    animation: musicMove 1s linear infinite;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+@-webkit-keyframes musicMove {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes musicMove {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
 #main ul {
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
 #main ul li {
@@ -61,57 +100,59 @@ audio {
 
 #main ul li:nth-of-type(1) {
     display: block;
-    background: url("../images/page_home.jpg") no-repeat 100% 100%;
+    background: url("../images/page_home.jpg") no-repeat 50% 0%;
 }
 
 #main ul li:nth-of-type(2) {
-    background: url("../images/page_6.jpg") no-repeat 100% 100%;
+    background: url("../images/page_6.jpg") no-repeat 50% 0;
 }
 
 #main ul li:nth-of-type(3) {
-    background: url("../images/page_3.jpg") no-repeat 100% 100%;
+    background: url("../images/page_3.jpg") no-repeat 50% 0;
 }
 
 #main ul li:nth-of-type(4) {
-    background: url("../images/page_1.jpg") no-repeat 100% 100%;
+    background: url("../images/page_1.jpg") no-repeat 50% 0;
 }
 
 #main ul li:nth-of-type(5) {
-    background: url("../images/page_2.jpg") no-repeat 100% 100%;
+    background: url("../images/page_2.jpg") no-repeat 50% 0;
 }
+
 #main h3 {
     margin: 30% auto;
+    margin-bottom: 20%;
     width: 100%;
-    height: 80px;
+    height: 8rem;
     text-align: center;
 }
 
 h3 span {
     display: inline-block;
-    margin: 0 20px;
-    width: 80px;
+    margin: 0 2rem;
+    width: 8rem;
     height: 100%;
     background: url("../images/title.png") no-repeat;
 }
 
 h3 .ge {
-    background-position: 15px, 0;
+    background-position: 3.5rem, 0;
 }
 
 h3 .ren {
-    background-position: -60px, 0;
+    background-position: -5rem, 0;
 }
 
 h3 .jian {
-    background-position: -150px, 0;
+    background-position: -12rem, 0;
 }
 
 h3 .li {
-    background-position: -235px, 0;
+    background-position: -19.5rem, 0;
 }
 
 .first p.myName {
-    font-size: 40px;
+    font-size: 13rem;
     color: #424242;
     text-align: center;
     -webkit-animation: 1s infinite pulse;
@@ -120,23 +161,23 @@ h3 .li {
 
 #main .arr {
     display: block;
-    width: 90px;
-    height: 52px;
+    width: 9rem;
+    height: 5.2rem;
     position: absolute;
     left: 50%;
-    margin-left: -45px;
-    bottom: 10%;
+    margin-left: -4.5rem;
+    bottom: 23%;
     -webkit-animation: 1s arrMove infinite;
     animation: 1s arrMove infinite;
 }
 
 @keyframes arrMove {
     0% {
-        transform: translateY(60px);
+        transform: translateY(6rem);
         opacity: 0
     }
     50% {
-        transform: translateY(30px);
+        transform: translateY(3rem);
         opacity: 0.8
     }
     100% {
@@ -147,11 +188,11 @@ h3 .li {
 
 @-webkit-keyframes arrMove {
     0% {
-        transform: translateY(60px);
+        transform: translateY(6rem);
         opacity: 0
     }
     50% {
-        transform: translateY(30px);
+        transform: translateY(3rem);
         opacity: 0.8
     }
     100% {
@@ -161,42 +202,43 @@ h3 .li {
 }
 
 .page_2 h4 {
-    margin: 45% auto 0 auto;
-    padding: 5px;
-    width: 65px;
-    font-size: 50px;
+    margin: 37% auto 0 auto;
+    padding: .5rem;
+    width: 6.5rem;
+    font-size: 12rem;
     -webkit-animation: 1.5s fadeInUp;
     animation: 1.5s fadeInUp;
+    text-align: center;
 }
 
 .helicopter {
     position: absolute;
-    top: 20%;
+    top: 17%;
     left: 50%;
-    margin: -50px;
-    width: 120px;
-    height: 93px;
+    margin: -5rem;
+    width: 12rem;
+    height: 9.3rem;
     -webkit-animation: 1.5s bounceInUp;
     animation: 1.5s bounceInUp;
 }
 
 .page_2 dl {
-    margin: 40px auto;
+    margin: 4rem auto;
     width: 90%;
-    font-size: 35px;
     color: #0fa2fb;
 }
 
 .page_2 dl span {
     display: block;
-    line-height: 80px;
+    line-height: 7rem;
     opacity: 0;
+    font-size: 9rem;
 }
 
 .page_2 dl dt {
     float: left;
     width: 35%;
-    text-align: center;
+    text-align: right;
 }
 
 .page_2 dl dt .nativePlace {
@@ -244,14 +286,14 @@ h3 .li {
 .page_2 dl dd {
     float: right;
     text-align: left;
-    padding-right: 12px;
+    padding-right: 7.2rem;
 }
 
 .page_3 #tec {
     margin: 20% auto;
     margin-bottom: 10%;
     width: 100%;
-    font-size: 70px;
+    font-size: 15rem;
     text-align: center;
     color: #fff;
 }
@@ -264,25 +306,27 @@ h3 .li {
 }
 
 #page_3 div div {
-    margin: 15% 5%;
-    height: 50%;
+    margin: 10% 5%;
+    height: 4rem;
     width: 80%;
-    font-size: 40px;
 }
 
 #page_3 div div em {
     float: left;
-    width: 100px;
+    width: 12rem;
     height: 100%;
-    margin-right: 10px;
+    font-size: 8rem;
+    margin-right: 0rem;
     text-align: center;
+    padding-left: 4rem;
 }
 
 #page_3 div div span {
     float: left;
     height: 100%;
+    font-size: 8rem;
     background-color: #4ccbf9;
-    padding-left: 20%;
+    padding-left: 5%;
 }
 
 #page_3 div div span.css {
@@ -296,24 +340,26 @@ h3 .li {
 #page_3 div div span.node {
     width: 48%;
 }
-.a2{
-    width:100%;
-    height:100%;
+
+.a2 {
+    width: 100%;
+    height: 100%;
     position: absolute;
 }
+
 .a2 p {
-    width: 155px;
-    height: 90px;
+    width: 12.5rem;
+    height: 7rem;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -77px;
-    margin-top: -45px;
-    border-radius: 30px;
-    font-size: 26px;
+    margin-left: -7.7rem;
+    margin-top: -10.5rem;
+    border-radius: 2rem;
+    font-size: 6.6rem;
     font-weight: bold;
     color: white;
-    line-height: 90px;
+    line-height: 7rem;
     text-align: center;
 }
 
@@ -374,37 +420,37 @@ h3 .li {
 }
 
 #a2 p:nth-child(1) {
-    left: 50%;
+    left: 55%;
     top: 30%
 }
 
 #a2 p:nth-child(2) {
-    left: 15%;
+    left: 30%;
     top: 40%
 }
 
 #a2 p:nth-child(3) {
-    left: 80%;
+    left: 75%;
     top: 40%
 }
 
 #a2 p:nth-child(4) {
-    left: 15%;
+    left: 30%;
     top: 60%
 }
 
 #a2 p:nth-child(5) {
-    left: 80%;
+    left: 75%;
     top: 60%
 }
 
 #a2 p:nth-child(6) {
-    left: 50%;
+    left: 55%;
     top: 70%
 }
 
 #a2 p:nth-child(7) {
-    left: 50%
+    left: 55%
 }
 
 #main li.zIndex {
